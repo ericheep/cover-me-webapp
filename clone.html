@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <title></title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 96px Times New Roman, Arial; color: white; background: black; }
+    </style>
+  </head>
+  <body>
+    <p id="lm"></p>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      $(function () {
+        var socket = io();
+        socket.on('live message', (msg) => {
+          $('#lm').text(msg);
+        });
+      });
+    </script>
+  </body>
+</html>
